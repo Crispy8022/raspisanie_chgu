@@ -1,0 +1,170 @@
+h3{
+	text-align: center;
+	margin: 0 auto;
+}
+
+ul, #myUL {
+  list-style-type: none;
+}
+
+#myUL {
+  margin: 0;
+  padding: 0;
+}
+
+.ramka_cht{
+  /* background: #78797e; */
+  position: relative;
+  border: 5px ridge transparent;
+  border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 20% / 1 / 0 stretch;
+  padding: 5px;
+}
+
+.ramka_pt{
+  /* background: #78797e; */
+  position: relative;
+  border: 5px ridge transparent;
+  border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 20% / 1 / 0 stretch;
+  padding: 5px;
+}
+
+.ramka_sb{
+  background: #78797e;
+  position: relative;
+  border: 5px ridge transparent;
+  border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 20% / 1 / 0 stretch;
+  padding: 5px;
+}
+
+span#nedelya{
+	border: 2px solid;
+	border-radius: 3px;
+	padding: 2px 5px 2px 5px;
+}
+
+.caret {
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.caret::before {
+  content: "\25B6";
+  color: white;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.caret-down::before {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);  
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.vremya{
+  float: right;
+  height: 36px;
+  display: block;
+  border-width: 3px 3px 3px 3px;
+  padding: 4px;
+  margin-top: -33px;
+  margin-left: -100px;
+  border-style: solid dashed solid dashed;
+  border-color: #9c27b0 #f3e5f5 #9c27b0 #f3e5f5;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.spisok {
+    border-left: 4px solid #f66d52; /* Ширина, цвет и вид линии */ 
+    padding: 5px; /* Расстояние от линии до текста */
+    background: #efcec8; /* Цвет фона */
+	width: 200px;
+    color: black;
+    display: block;
+}
+
+.design{
+  display: block;
+  width: 180px;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: -1px -1px #000;
+  user-select: none;
+  outline: none;
+  background-color: #000;
+  background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto;
+  background-position: 200% 0, 0 0;
+  box-shadow: rgba(0,0,0,.3) 0 2px 5px;
+}
+
+.dz {
+    border-left: 4px solid #f66d52; /* Ширина, цвет и вид линии */ 
+    padding: 5px; /* Расстояние от линии до текста */
+    background: #efce80; /* Цвет фона */
+	width: 150px;
+    color: black;
+    display: block;
+	margin-left: 20px;
+	color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: -1px -1px #000;
+  user-select: none;
+  outline: none;
+  background-color: #000;
+  background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto;
+  background-position: 200% 0, 0 0;
+  box-shadow: rgba(0,0,0,.3) 0 2px 5px;
+}
+
+.photo1{
+	text-align: center;
+	
+}
+
+.ramka {
+  position: relative;
+  border: 5px ridge transparent;
+  border-image: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) 20% / 1 / 0 stretch;
+  padding: 5px;
+}
+
+.ramka_cht.uspevaemost{
+	background: none;
+}
+
+.ramka_pt.uspevaemost{
+	background: none;
+}
+
+@media screen and (min-width: 501px) {
+.edit_red {
+  margin: 0 auto;
+  width: 70%;
+}
+}
+
+@media screen and (max-width: 500px) {
+.vremya{
+  width: 90px;
+}
+}

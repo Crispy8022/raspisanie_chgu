@@ -1,0 +1,270 @@
+ <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Расписание ЧГУ</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-underline.css" />
+		<link rel="stylesheet" href="css/photo.css">
+		<link rel="stylesheet" type="text/css" href="css/tablitsa.css">
+		<link rel="stylesheet" type="text/css" href="css/spisok.css">
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<link rel="stylesheet" href="css/popup.css">
+		<link rel="stylesheet" href="css/raspisanie.css">
+		<link rel="stylesheet" href="css/galochka.css" />
+		<link rel="stylesheet" href="css/week1.css" />
+		<link rel="stylesheet" href="css/nedelya2.css" />
+		<link rel="stylesheet" href="css/menu1.css" />
+		
+</head>
+
+<body>
+
+	<!-- partial:index.partial.html -->
+<input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+<label for="page-nav-toggle">
+  <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+    <g class="icon-group">
+      <g class="icon--menu">
+        <path d="M 6 0 L 54 0" />
+        <path d="M 6 15 L 54 15" />
+        <path d="M 6 30 L 54 30" />
+      </g>
+      <g class="icon--close">
+        <path d="M 15 0 L 45 30" />
+        <path d="M 15 30 L 45 0" />
+      </g>
+    </g>
+  </svg>
+</label>
+
+<nav class="main-navigation">
+  <ul>
+    <li><a href="attestation.html">Аттестации и Экзамены</a></li>
+	<li><a href="uspevaemost.html">Успеваемость</a></li>
+  </ul>
+</nav>
+	
+	<body class="color-2">
+		<div class="container">
+			<header class="codrops-header">
+			<button type="button" onClick="window.location.reload();"><h1 class="group">2ПИ-22-4</h1>	</button>
+				<br><br>
+			<h3></h3>
+			<div class="ramkanedelya">
+		  
+<!-- partial:index.partial.html -->
+<div class="Click-here">?</div>        
+<div class="custom-model-main">
+    <div class="custom-model-inner">        
+    <div class="close-btn">×</div>
+        <div class="custom-model-wrap">
+            <div class="pop-up-content-wrap">
+			   <div class="wrap"><div class="gradient">
+				<img src="img/raspisanie.jpg" alt="Nature">
+			  </div></div>
+            </div>
+        </div>  
+    </div>  
+    <div class="bg-overlay"></div>
+</div>
+</div>
+
+			
+			</header>
+        </div>
+		  <br>
+
+<div class="edit_red">
+	<button id="editBtn" type="button" class="redactirovat">Редактировать</button>
+		<div id="editDocument">
+</div>
+	
+  <div class="tabs">
+    <div class="tabs__nav">
+		<a href="index.html" class="tabs__btn nedelya1">Неделя №1</a>
+		<a href="index2.html" class="tabs__btn nedelya2 attestation">Неделя №2</a>
+    </div>
+	
+	<!-- Аттестация -->
+	
+	<table class="dztable">
+	<tr>
+	  <th class="time">№</th>
+	  <th>✅</th>
+	  <th class="predmet">Аттестации</th>
+	</tr>
+	 <tr>
+	  <td>1</td>
+	  <td><input class="check" id="dzpngalka1" name="name" type="checkbox"></td>
+	  <td id="attestation1"></td>
+	 </tr>
+	<tr>
+	  <td>2</td>
+	  <td><input class="check" id="dzpngalka2" name="name" type="checkbox"></td>
+	  <td id="attestation2"></td>
+	</tr>
+	 <tr>
+	  <td>3</td>
+	  <td><input class="check" id="dzpngalka3" name="name" type="checkbox"></td>
+	  <td id="attestation3"></td>
+	 </tr>
+	<tr>
+	  <td>4</td>
+	  <td><input class="check" id="dzpngalka4" name="name" type="checkbox"></td>
+	  <td id="attestation4"></td>
+	</tr>
+	<tr>
+	  <td>5</td>
+	  <td><input class="check" id="dzpngalka5" name="name" type="checkbox"></td>
+	  <td id="attestation5"></td>
+	</tr>
+	<tr>
+	  <td>6</td>
+	  <td><input class="check" id="dzpngalka6" name="name" type="checkbox"></td>
+	  <td id="attestation6"></td>
+	</tr>
+	<tr>
+	  <td>7</td>
+	  <td><input class="check" id="dzpngalka7" name="name" type="checkbox"></td>
+	  <td id="attestation7"></td>
+	</tr>
+	<tr>
+	  <td>8</td>
+	  <td><input class="check" id="dzpngalka8" name="name" type="checkbox"></td>
+	  <td id="attestation8"></td>
+	</tr>
+	<tr>
+	  <td>9</td>
+	  <td><input class="check" id="dzpngalka9" name="name" type="checkbox"></td>
+	  <td id="attestation9"></td>
+	</tr>
+	</table>
+	
+	<br>
+
+	<!-- Зачёты -->
+	
+	<table class="dztable">
+		<tr>
+		  <th class="time">№</th>
+		  <th>✅</th>
+		  <th class="predmet">Зачёты</th>
+		</tr>
+		 <tr>
+		  <td>1</td>
+		  <td><input class="check" id="dzpngalka10" name="name" type="checkbox"></td>
+		  <td id="zachet1"></td>
+		 </tr>
+		<tr>
+		  <td>2</td>
+		  <td><input class="check" id="dzpngalka11" name="name" type="checkbox"></td>
+		  <td id="zachet2"></td>
+		</tr>
+		 <tr>
+		  <td>3</td>
+		  <td><input class="check" id="dzpngalka12" name="name" type="checkbox"></td>
+		  <td id="zachet3"></td>
+		 </tr>
+		<tr>
+		  <td>4</td>
+		  <td><input class="check" id="dzpngalka13" name="name" type="checkbox"></td>
+		  <td id="zachet4"></td>
+		</tr>
+		<tr>
+		  <td>5</td>
+		  <td><input class="check" id="dzpngalka14" name="name" type="checkbox"></td>
+		  <td id="zachet5"></td>
+		</tr>
+		<tr>
+		  <td>6</td>
+		  <td><input class="check" id="dzpngalka15" name="name" type="checkbox"></td>
+		  <td id="zachet6"></td>
+		</tr>
+		<tr>
+		  <td>7</td>
+		  <td><input class="check" id="dzpngalka16" name="name" type="checkbox"></td>
+		  <td id="zachet7"></td>
+		</tr>
+		<tr>
+		  <td>8</td>
+		  <td><input class="check" id="dzpngalka17" name="name" type="checkbox"></td>
+		  <td id="zachet8"></td>
+		</tr>
+		<tr>
+		  <td>9</td>
+		  <td><input class="check" id="dzpngalka18" name="name" type="checkbox"></td>
+		  <td id="zachet9"></td>
+		</tr>
+		</table>
+		
+		<br>
+	
+	<!-- Экзамены -->	
+
+	<table class="dztable">
+	<tr>
+	  <th class="time">№</th>
+	  <th>✅</th>
+	  <th class="predmet">Экзамены</th>
+	</tr>
+	 <tr>
+	  <td>1</td>
+	  <td><input class="check" id="dzpngalka19" name="name" type="checkbox"></td>
+	  <td id="exam1"></td>
+	 </tr>
+	<tr>
+	  <td>2</td>
+	  <td><input class="check" id="dzpngalka20" name="name" type="checkbox"></td>
+	  <td id="exam2"></td>
+	</tr>
+	 <tr>
+	  <td>3</td>
+	  <td><input class="check" id="dzpngalka21" name="name" type="checkbox"></td>
+	  <td id="exam3"></td>
+	 </tr>
+	<tr>
+	  <td>4</td>
+	  <td><input class="check" id="dzpngalka22" name="name" type="checkbox"></td>
+	  <td id="exam4"></td>
+	</tr>
+	<tr>
+	  <td>5</td>
+	  <td><input class="check" id="dzpngalka23" name="name" type="checkbox"></td>
+	  <td id="exam5"></td>
+	</tr>
+	</table>
+
+			</li>
+		  </ul>
+		</ul>
+	  </ul>
+
+			</li>
+		  </ul>
+		</ul>
+	  </ul>
+</div>
+
+</div>
+
+    </div>
+  </div>
+
+		<script src="js/spisok.js"></script>
+		<script src="js/attestation.js"></script>
+		<script src="js/time.js"></script>
+		<script src='https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js'></script><script  src="js/photo.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+		<script  src="js/popup.js"></script>
+		<script  src="js/galochka.js"></script>
+		<script  src="js/vkladki.js"></script>
+
+</body>
+</html>

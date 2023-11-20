@@ -1,0 +1,696 @@
+
+              <!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Расписание ЧГУ</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-underline.css" />
+		<link rel="stylesheet" href="css/photo.css">
+		<link rel="stylesheet" type="text/css" href="css/tablitsa.css">
+		<link rel="stylesheet" type="text/css" href="css/spisok.css">
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<link rel="stylesheet" href="css/popup.css">
+		<link rel="stylesheet" href="css/raspisanie.css">
+		<link rel="stylesheet" href="css/galochka.css" />
+		<link rel="stylesheet" href="css/week1.css" />
+		<link rel="stylesheet" href="css/nedelya2.css" />
+		<link rel="stylesheet" href="css/menu1.css" />
+</head>
+
+<body>
+
+	<!-- partial:index.partial.html -->
+<input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+<label for="page-nav-toggle">
+  <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+    <g class="icon-group">
+      <g class="icon--menu">
+        <path d="M 6 0 L 54 0" />
+        <path d="M 6 15 L 54 15" />
+        <path d="M 6 30 L 54 30" />
+      </g>
+      <g class="icon--close">
+        <path d="M 15 0 L 45 30" />
+        <path d="M 15 30 L 45 0" />
+      </g>
+    </g>
+  </svg>
+</label>
+
+<nav class="main-navigation">
+  <ul>
+    <li><a href="attestation.html">Аттестации и Экзамены</a></li>
+	<li><a href="uspevaemost.html">Успеваемость</a></li>
+  </ul>
+</nav>
+	
+	<body class="color-2">
+		<div class="container">
+			<header class="codrops-header">
+			<button type="button" onclick="window.location.reload();"><h1 class="group">2ПИ-22-2</h1></button>
+				<br><br>
+			<h3></h3>
+			<div class="ramkanedelya">
+		  
+<!-- partial:index.partial.html -->
+<div class="Click-here">?</div>        
+<div class="custom-model-main">
+    <div class="custom-model-inner">        
+    <div class="close-btn">×</div>
+        <div class="custom-model-wrap">
+            <div class="pop-up-content-wrap">
+			   <div class="wrap"><div class="gradient">
+				<img src="img/raspisanie_2курс.jpg" alt="Nature">
+			  </div></div>
+            </div>
+        </div>  
+    </div>  
+    <div class="bg-overlay"></div>
+</div>
+</div>
+
+			
+			</header>
+        </div>
+		  <br>
+<div class="edit_red">
+	<button id="editBtn" type="button" class="redactirovat">Редактировать</button>
+		<div id="editDocument">
+</div>
+	
+  <div class="tabs">
+    <div class="tabs__nav">
+		<a href="index.html" class="tabs__btn nedelya1">Неделя №1</a>
+		<a href="index2.html" class="tabs__btn nedelya2">Неделя №2</a>
+    </div>
+	
+	<!-- Вторая Неделя -->
+	  <div class="tab_content">
+      <div class="tabs__pane tabs__pane_show">
+			
+<!-- For Понедельник -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-pn_ design">Понедельник</span>
+        <span class="vremya" id="pntime_"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="pn1_"></td>
+                            <td id="pn2_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="pn3_"></td>
+                            <td id="pn4_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="pn5_"></td>
+                            <td id="pn6_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="pn7_"></td>
+                            <td id="pn8_"></td>
+                        </tr>
+                    </table>
+
+                    <ul id="myUL">
+                        <span class="caret dz">ДЗ</span>
+                        <ul class="nested">
+                            <ul class="expandable">
+                                <li>
+                                    <table class="dztable-pn_"> <!-- Correct class name -->
+                                        <tr>
+                                            <th class="time">№</th>
+                                            <th class="predmet">ДЗ</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor1">1</td>
+                                            <td id="dzpn1_" oninput="updateCounterPn_('dzpn1_')"></td> <!-- Provide a string for the cell ID -->
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor2">2</td>
+                                            <td id="dzpn2_" oninput="updateCounterPn_('dzpn2_')"></td> <!-- Provide a string for the cell ID -->
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor3">3</td>
+                                            <td id="dzpn3_" oninput="updateCounterPn_('dzpn3_')"></td> <!-- Provide a string for the cell ID -->
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor4">4</td>
+                                            <td id="dzpn4_" oninput="updateCounterPn_('dzpn4_')"></td> <!-- Provide a string for the cell ID -->
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>
+
+
+<!-- For Вторник -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-vt_ design">Вторник</span>
+        <span class="vremya" id="vttime_"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="vt1_"></td>
+                            <td id="vt2_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="vt3_"></td>
+                            <td id="vt4_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="vt5_"></td>
+                            <td id="vt6_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="vt7_"></td>
+                            <td id="vt8_"></td>
+                        </tr>
+                    </table>
+
+                    <ul id="myUL">
+                        <span class="caret dz">ДЗ</span>
+                        <ul class="nested">
+                            <ul class="expandable">
+                                <li>
+                                    <table class="dztable-vt_">
+                                        <tr>
+                                            <th class="time">№</th>
+                                            <th class="predmet">ДЗ</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor1">1</td>
+                                            <td id="dzvt1_" oninput="updateCounterVt_('dzvt1_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor2">2</td>
+                                            <td id="dzvt2_" oninput="updateCounterVt_('dzvt2_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor3">3</td>
+                                            <td id="dzvt3_" oninput="updateCounterVt_('dzvt3_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor4">4</td>
+                                            <td id="dzvt4_" oninput="updateCounterVt_('dzvt4_')"></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>
+
+  
+ <!-- For Среда -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-sr_ design">Среда</span>
+        <span class="vremya" id="srtime_"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="sr1_"></td>
+                            <td id="sr2_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="sr3_"></td>
+                            <td id="sr4_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="sr5_"></td>
+                            <td id="sr6_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="sr7_"></td>
+                            <td id="sr8_"></td>
+                        </tr>
+                    </table>
+
+                    <ul id="myUL">
+                        <span class="caret dz">ДЗ</span>
+                        <ul class="nested">
+                            <ul class="expandable">
+                                <li>
+                                    <table class="dztable-sr_">
+                                        <tr>
+                                            <th class="time">№</th>
+                                            <th class="predmet">ДЗ</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor1">1</td>
+                                            <td id="dzsr1_" oninput="updateCounterSr_('dzsr1_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor2">2</td>
+                                            <td id="dzsr2_" oninput="updateCounterSr_('dzsr2_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor3">3</td>
+                                            <td id="dzsr3_" oninput="updateCounterSr_('dzsr3_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor4">4</td>
+                                            <td id="dzsr4_" oninput="updateCounterSr_('dzsr4_')"></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>
+
+<!-- For Четверг -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-cht_ design">Четверг</span>
+        <span class="vremya" id="chttime_"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="cht1_"></td>
+                            <td id="cht2_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="cht3_"></td>
+                            <td id="cht4_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="cht5_"></td>
+                            <td id="cht6_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="cht7_"></td>
+                            <td id="cht8_"></td>
+                        </tr>
+                    </table>
+
+                    <ul id="myUL">
+                        <span class="caret dz">ДЗ</span>
+                        <ul class="nested">
+                            <ul class="expandable">
+                                <li>
+                                    <table class="dztable-cht_">
+                                        <tr>
+                                            <th class="time">№</th>
+                                            <th class="predmet">ДЗ</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor1">1</td>
+                                            <td id="dzcht1_" oninput="updateCounterCht_('dzcht1_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor2">2</td>
+                                            <td id="dzcht2_" oninput="updateCounterCht_('dzcht2_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor3">3</td>
+                                            <td id="dzcht3_" oninput="updateCounterCht_('dzcht3_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor4">4</td>
+                                            <td id="dzcht4_" oninput="updateCounterCht_('dzcht4_')"></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>
+
+<!-- For Пятница -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-pt_ design">Пятница</span>
+        <span class="vremya" id="pttime_"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="pt1_"></td>
+                            <td id="pt2_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="pt3_"></td>
+                            <td id="pt4_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="pt5_"></td>
+                            <td id="pt6_"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="pt7_"></td>
+                            <td id="pt8_"></td>
+                        </tr>
+                    </table>
+
+                    <ul id="myUL">
+                        <span class="caret dz">ДЗ</span>
+                        <ul class="nested">
+                            <ul class="expandable">
+                                <li>
+                                    <table class="dztable-pt_">
+                                        <tr>
+                                            <th class="time">№</th>
+                                            <th class="predmet">ДЗ</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor1">1</td>
+                                            <td id="dzpt1_" oninput="updateCounterPt_('dzpt1_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor2">2</td>
+                                            <td id="dzpt2_" oninput="updateCounterPt_('dzpt2_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor3">3</td>
+                                            <td id="dzpt3_" oninput="updateCounterPt_('dzpt3_')"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nedelyacolor4">4</td>
+                                            <td id="dzpt4_" oninput="updateCounterPt_('dzpt4_')"></td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </ul>
+</div>
+
+
+<div class="ramka_sb">
+	<ul id="myUL">
+	  <span class="caret spisok design">Суббота</span>
+	  <span class="vremya" id="sbtime_"></span>
+		<ul class="nested">
+			  <ul class="expandable">
+					<li>	
+	<table>
+	<tr>
+	  <th class="time">Время</th>
+	  <th class="predmet">Предмет</th>
+	  <th class="kabinet">Кабинет</th>
+	  </tr>
+	 <tr>
+	  <td class="nedelyacolor1">9:00-10:30</td> 
+	  <td id="sb1_"></td> 
+	  <td id="sb2_"></td> 
+	 </tr>
+	<tr>
+	  <td class="nedelyacolor2">10:40-12:10</td>
+	  <td id="sb3_"></td> 
+	  <td id="sb4_"></td> 
+	</tr>
+	 <tr>
+	  <td class="nedelyacolor3">13:00-14:30</td> 
+	  <td id="sb5_"></td> 
+	  <td id="sb6_"></td> 
+	 </tr>
+	<tr>
+	  <td class="nedelyacolor4">14:40-16:10</td> 
+	  <td id="sb7_"></td>
+	  <td id="sb8_"></td>
+	</tr>
+	</table>
+	
+	<ul id="myUL">
+	  <span class="caret dz">ДЗ</span>
+		<ul class="nested">
+			  <ul class="expandable">
+					<li>	
+	<table class="dztable">
+	<tr>
+	  <th class="time">№</th>
+	  <th class="predmet">ДЗ</th>
+	</tr>
+	 <tr>
+	  <td class="nedelyacolor1">1</td>
+	  <td id="dzsb1_"></td>
+	 </tr>
+	<tr>
+	  <td class="nedelyacolor2">2</td>
+	  <td id="dzsb2_"></td>
+	</tr>
+	 <tr>
+	  <td class="nedelyacolor3">3</td>
+	  <td id="dzsb3_"></td>
+	 </tr>
+	<tr>
+	  <td class="nedelyacolor4">4</td>
+	  <td id="dzsb4_"></td>
+	</tr>
+	</table>
+
+			</li>
+		  </ul>
+		</ul>
+	  </ul>
+
+			</li>
+		  </ul>
+		</ul>
+	  </ul>
+</div>
+			
+			
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    // Counter and update function for Понедельник
+    let counterPn_ = localStorage.getItem('counterPn_') || 0;
+
+    function updateCounterPn_(cellId) {
+        const table = document.querySelector(".dztable-pn_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterPn_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterPn_++;
+            }
+        }
+
+        document.querySelector(".spisok-pn_").innerHTML = `Понедельник (${counterPn_})`;
+        localStorage.setItem('counterPn_', counterPn_);
+    }
+
+    document.querySelector(".spisok-pn_").innerHTML = `Понедельник (${counterPn_})`;
+
+    // Counter and update function for Вторник
+    let counterVt_ = localStorage.getItem('counterVt_') || 0;
+
+    function updateCounterVt_(cellId) {
+        const table = document.querySelector(".dztable-vt_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterVt_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterVt_++;
+            }
+        }
+
+        document.querySelector(".spisok-vt_").innerHTML = `Вторник (${counterVt_})`;
+        localStorage.setItem('counterVt_', counterVt_);
+    }
+
+    document.querySelector(".spisok-vt_").innerHTML = `Вторник (${counterVt_})`;
+
+    // Counter and update function for Среда
+    let counterSr_ = localStorage.getItem('counterSr_') || 0;
+
+    function updateCounterSr_(cellId) {
+        const table = document.querySelector(".dztable-sr_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterSr_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterSr_++;
+            }
+        }
+
+        document.querySelector(".spisok-sr_").innerHTML = `Среда (${counterSr_})`;
+        localStorage.setItem('counterSr_', counterSr_);
+    }
+
+    document.querySelector(".spisok-sr_").innerHTML = `Среда (${counterSr_})`;
+
+    // Counter and update function for Четверг
+    let counterCht_ = localStorage.getItem('counterCht_') || 0;
+
+    function updateCounterCht_(cellId) {
+        const table = document.querySelector(".dztable-cht_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterCht_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterCht_++;
+            }
+        }
+
+        document.querySelector(".spisok-cht_").innerHTML = `Четверг (${counterCht_})`;
+        localStorage.setItem('counterCht_', counterCht_);
+    }
+
+    document.querySelector(".spisok-cht_").innerHTML = `Четверг (${counterCht_})`;
+
+    // Counter and update function for Пятница
+    let counterPt_ = localStorage.getItem('counterPt_') || 0;
+
+    function updateCounterPt_(cellId) {
+        const table = document.querySelector(".dztable-pt_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterPt_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterPt_++;
+            }
+        }
+
+        document.querySelector(".spisok-pt_").innerHTML = `Пятница (${counterPt_})`;
+        localStorage.setItem('counterPt_', counterPt_);
+    }
+
+    document.querySelector(".spisok-pt_").innerHTML = `Пятница (${counterPt_})`;
+
+    // Counter and update function for Суббота
+    let counterSb_ = localStorage.getItem('counterSb_') || 0;
+
+    function updateCounterSb_(cellId) {
+        const table = document.querySelector(".dztable-sb_");
+        const rows = table.getElementsByTagName('tr');
+
+        counterSb_ = 0;
+
+        for (let i = 1; i < rows.length; i++) {
+            const cell = rows[i].getElementsByTagName('td')[1];
+            if (cell.innerHTML.trim() !== "") {
+                counterSb_++;
+            }
+        }
+
+        document.querySelector(".spisok-sb_").innerHTML = `Суббота (${counterSb_})`;
+        localStorage.setItem('counterSb_', counterSb_);
+    }
+
+    document.querySelector(".spisok-sb_").innerHTML = `Суббота (${counterSb_})`;
+</script>
+
+
+
+		<script src="js/spisok.js"></script>
+		<script src="js/editor1.js"></script>
+		<script src="js/time.js"></script>
+		<script src='https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js'></script><script  src="js/photo.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+		<script  src="js/popup.js"></script>
+		<script  src="js/galochka.js"></script>
+		<script  src="js/vkladki.js"></script>
+		
+</body>
+
+</html>
+
+						
