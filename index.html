@@ -100,7 +100,7 @@
 <div class="ramka">
     <ul id="myUL">
         <span class="caret spisok-pn design">Понедельник</span>
-        <span class="vremya" id="pntime"></span>
+        <span class="vremya" id="pntime" oninput="updateTime('pntime', 'vttime')"></span>
         <ul class="nested">
             <ul class="expandable">
                 <li>
@@ -242,6 +242,8 @@
     </ul>
 </div>
 
+
+
 <!-- For Среда -->
 <div class="ramka">
     <ul id="myUL">
@@ -314,6 +316,7 @@
         </ul>
     </ul>
 </div>
+
 
 <!-- For Четверг -->
 <div class="ramka">
@@ -542,144 +545,6 @@
   </div>
 
 
-<script>
- // For Понедельник
-let counterPn = localStorage.getItem('counterPn') || 0;
-
-function updateCounterPn(cellId) {
-    const table = document.querySelector(".dztable-pn");
-    const rows = table.getElementsByTagName('tr');
-
-    counterPn = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterPn++;
-        }
-    }
-
-    document.querySelector(".spisok-pn").innerHTML = `Понедельник (${counterPn})`;
-    localStorage.setItem('counterPn', counterPn);
-}
-
-document.querySelector(".spisok-pn").innerHTML = `Понедельник (${counterPn})`;
-
-// For Вторник
-let counterVt = localStorage.getItem('counterVt') || 0;
-
-function updateCounterVt(cellId) {
-    const table = document.querySelector(".dztable-vt");
-    const rows = table.getElementsByTagName('tr');
-
-    counterVt = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterVt++;
-        }
-    }
-
-    document.querySelector(".spisok-vt").innerHTML = `Вторник (${counterVt})`;
-    localStorage.setItem('counterVt', counterVt);
-}
-
-document.querySelector(".spisok-vt").innerHTML = `Вторник (${counterVt})`;
-
-// For Среда
-let counterSr = localStorage.getItem('counterSr') || 0;
-
-function updateCounterSr(cellId) {
-    const table = document.querySelector(".dztable-sr");
-    const rows = table.getElementsByTagName('tr');
-
-    counterSr = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterSr++;
-        }
-    }
-
-    document.querySelector(".spisok-sr").innerHTML = `Среда (${counterSr})`;
-    localStorage.setItem('counterSr', counterSr);
-}
-
-document.querySelector(".spisok-sr").innerHTML = `Среда (${counterSr})`;
-
-// For Четверг
-let counterCht = localStorage.getItem('counterCht') || 0;
-
-function updateCounterCht(cellId) {
-    const table = document.querySelector(".dztable-cht");
-    const rows = table.getElementsByTagName('tr');
-
-    counterCht = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterCht++;
-        }
-    }
-
-    document.querySelector(".spisok-cht").innerHTML = `Четверг (${counterCht})`;
-    localStorage.setItem('counterCht', counterCht);
-}
-
-document.querySelector(".spisok-cht").innerHTML = `Четверг (${counterCht})`;
-
-// For Пятница
-let counterPt = localStorage.getItem('counterPt') || 0;
-
-function updateCounterPt(cellId) {
-    const table = document.querySelector(".dztable-pt");
-    const rows = table.getElementsByTagName('tr');
-
-    counterPt = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterPt++;
-        }
-    }
-
-    document.querySelector(".spisok-pt").innerHTML = `Пятница (${counterPt})`;
-    localStorage.setItem('counterPt', counterPt);
-}
-
-document.querySelector(".spisok-pt").innerHTML = `Пятница (${counterPt})`;
-
-// For Суббота
-let counterSb = localStorage.getItem('counterSb') || 0;
-
-function updateCounterSb(cellId) {
-    const table = document.querySelector(".dztable-sb");
-    const rows = table.getElementsByTagName('tr');
-
-    counterSb = 0;
-
-    for (let i = 1; i < rows.length; i++) {
-        const cell = rows[i].getElementsByTagName('td')[1];
-        if (cell.innerHTML.trim() !== "") {
-            counterSb++;
-        }
-    }
-
-    document.querySelector(".spisok-sb").innerHTML = `Суббота (${counterSb})`;
-    localStorage.setItem('counterSb', counterSb);
-}
-
-document.querySelector(".spisok-sb").innerHTML = `Суббота (${counterSb})`;
-
-</script>
-
-
-
-
 		<script src="js/spisok.js"></script>
 		<script src="js/editor.js"></script>
 		<script src="js/time.js"></script>
@@ -687,9 +552,8 @@ document.querySelector(".spisok-sb").innerHTML = `Суббота (${counterSb})`
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 		<script  src="js/popup.js"></script>
 		<script  src="js/vkladki.js"></script>
+		<script  src="js/counter_dz.js"></script>
+		<script  src="js/auto-data.js"></script>
 		
 </body>
-
 </html>
-
-						
