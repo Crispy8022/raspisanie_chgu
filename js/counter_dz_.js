@@ -14,11 +14,11 @@
             }
         }
 
-        document.querySelector(".spisok-pn_").innerHTML = `Понедельник (${counterPn_})`;
+        document.querySelector(".spisok-pn_").innerHTML = `Пн (${counterPn_})`;
         localStorage.setItem('counterPn_', counterPn_);
     }
 
-    document.querySelector(".spisok-pn_").innerHTML = `Понедельник (${counterPn_})`;
+    document.querySelector(".spisok-pn_").innerHTML = `Пн (${counterPn_})`;
 
     // Counter and update function for Вторник
     let counterVt_ = localStorage.getItem('counterVt_') || 0;
@@ -36,11 +36,11 @@
             }
         }
 
-        document.querySelector(".spisok-vt_").innerHTML = `Вторник (${counterVt_})`;
+        document.querySelector(".spisok-vt_").innerHTML = `Вт (${counterVt_})`;
         localStorage.setItem('counterVt_', counterVt_);
     }
 
-    document.querySelector(".spisok-vt_").innerHTML = `Вторник (${counterVt_})`;
+    document.querySelector(".spisok-vt_").innerHTML = `Вт (${counterVt_})`;
 
     // Counter and update function for Среда
     let counterSr_ = localStorage.getItem('counterSr_') || 0;
@@ -58,11 +58,11 @@
             }
         }
 
-        document.querySelector(".spisok-sr_").innerHTML = `Среда (${counterSr_})`;
+        document.querySelector(".spisok-sr_").innerHTML = `Ср (${counterSr_})`;
         localStorage.setItem('counterSr_', counterSr_);
     }
 
-    document.querySelector(".spisok-sr_").innerHTML = `Среда (${counterSr_})`;
+    document.querySelector(".spisok-sr_").innerHTML = `Ср (${counterSr_})`;
 
     // Counter and update function for Четверг
     let counterCht_ = localStorage.getItem('counterCht_') || 0;
@@ -80,11 +80,11 @@
             }
         }
 
-        document.querySelector(".spisok-cht_").innerHTML = `Четверг (${counterCht_})`;
+        document.querySelector(".spisok-cht_").innerHTML = `Чт (${counterCht_})`;
         localStorage.setItem('counterCht_', counterCht_);
     }
 
-    document.querySelector(".spisok-cht_").innerHTML = `Четверг (${counterCht_})`;
+    document.querySelector(".spisok-cht_").innerHTML = `Чт (${counterCht_})`;
 
     // Counter and update function for Пятница
     let counterPt_ = localStorage.getItem('counterPt_') || 0;
@@ -102,11 +102,11 @@
             }
         }
 
-        document.querySelector(".spisok-pt_").innerHTML = `Пятница (${counterPt_})`;
+        document.querySelector(".spisok-pt_").innerHTML = `Пт (${counterPt_})`;
         localStorage.setItem('counterPt_', counterPt_);
     }
 
-    document.querySelector(".spisok-pt_").innerHTML = `Пятница (${counterPt_})`;
+    document.querySelector(".spisok-pt_").innerHTML = `Пт (${counterPt_})`;
 
     // Counter and update function for Суббота
     let counterSb_ = localStorage.getItem('counterSb_') || 0;
@@ -124,8 +124,8 @@
             }
         }
 
-        document.querySelector(".spisok-sb_").innerHTML = `Суббота (${counterSb_})`;
+        document.querySelector(".spisok-sb_").innerHTML = `Сб (${counterSb_})`;
         localStorage.setItem('counterSb_', counterSb_);
     }
 
-    document.querySelector(".spisok-sb_").innerHTML = `Суббота (${counterSb_})`;
+    document.querySelector(".spisok-sb_").innerHTML = `Сб (${counterSb_})`;

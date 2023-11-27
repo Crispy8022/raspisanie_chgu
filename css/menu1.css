@@ -37,7 +37,7 @@ h1 {
   top: calc(var(--space) * 1.5);
   right: calc(var(--space) * 2);
   cursor: pointer;
-  z-index: 2;
+  z-index: 999;
 }
 
 .icon--menu-toggle {
@@ -74,7 +74,7 @@ h1 {
   height: 100%;
   transform: translateX(-100%);
   transition: transform var(--nav-duration);
-  z-index: 1;
+  z-index: 2;
 }
 .main-navigation:after {
   content: "";
@@ -88,7 +88,7 @@ h1 {
   z-index: -1;
 }
 .main-navigation ul {
-  font-size: 12vmin;
+  font-size: 7vmin;
   font-family: var(--font-heading);
   width: 100%;
 }
@@ -153,6 +153,7 @@ h1 {
 }
 .main-navigation-toggle:checked ~ .main-navigation a {
   animation: link-appear calc(var(--duration) * 1.5) var(--ease) forwards;
+  z-index: 998;
 }
 .main-navigation-toggle:checked ~ .main-navigation li:nth-child(1):after, .main-navigation-toggle:checked ~ .main-navigation li:nth-child(1) a {
   animation-delay: calc((var(--duration) / 2) * 1 * 0.125);

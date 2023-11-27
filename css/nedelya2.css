@@ -44,12 +44,14 @@
 
     .tabs__pane_show {
       display: block;
+      margin-top: 5.3em;
+      width: 70.4%;
+      transform: translateX(21%);
     }
-	
-	.tabs__btn.nedelya2.attestation{
-		background: none;
-	}
-	
-	.tabs__btn.nedelya2.uspevaemost{
-		background: none;
-	}
+
+    @media screen and (min-device-width: 300px) and (max-device-width: 500px) { 
+      .tabs__pane_show {
+        width: 100%;
+        transform: none;
+      }
+  }

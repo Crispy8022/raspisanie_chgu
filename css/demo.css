@@ -13,6 +13,7 @@ body {
     background-position: center;
     height: 100vh; /* Это добавлено, чтобы фон охватывал всю высоту экрана */
     margin: 0; /* Это убирает внешние отступы body */
+	background-attachment: fixed;
 }
 
 body::before,
@@ -134,8 +135,11 @@ label.select-label {
 
 .redactirovat{
 	padding: 3px;
-	margin-top: -30px;
+    margin-top: -2em;
     display: block;
+    /* position: fixed; */
+    /* margin-left: -6em; */
+    z-index: 1;
 }
 
 .redactirovat.uspevaemost{

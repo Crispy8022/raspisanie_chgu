@@ -1,5 +1,5 @@
 
-              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -15,14 +15,13 @@
 		<link rel="stylesheet" type="text/css" href="css/tablitsa.css">
 		<link rel="stylesheet" type="text/css" href="css/spisok.css">
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/menu.css" /> -->
 		<link rel="stylesheet" href="css/popup.css">
 		<link rel="stylesheet" href="css/raspisanie.css">
-		<link rel="stylesheet" href="css/galochka.css" />
-		<link rel="stylesheet" href="css/week1.css" />
+		<!-- <link rel="stylesheet" href="css/galochka.css" /> -->
+		<!-- <link rel="stylesheet" href="css/week1.css" /> -->
 		<link rel="stylesheet" href="css/nedelya1.css" />
 		<link rel="stylesheet" href="css/menu1.css" />
-		
 </head>
 
 <body>
@@ -51,11 +50,11 @@
 	<li><a href="uspevaemost.html">Успеваемость</a></li>
   </ul>
 </nav>
-	
+
 	<body class="color-2">
 		<div class="container">
 			<header class="codrops-header">
-			<button type="button" onClick="window.location.reload();"><h1 class="group">2ПИ-22-2</h1>	</button>
+			<button type="button" onclick="window.location.reload();"><h1 class="group">1-ПИ-2</h1>	</button>
 				<br><br>
 			<h3></h3>
 			<div class="ramkanedelya">
@@ -76,30 +75,39 @@
     <div class="bg-overlay"></div>
 </div>
 </div>
-
-			
-			</header>
-        </div>
-		  <br>
-<div class="edit_red">
-	<button id="editBtn" type="button" class="redactirovat">Редактировать</button>
-		<div id="editDocument">
+</header>
 </div>
-	
-  <div class="tabs">
-    <div class="tabs__nav">
-		<a href="index.html" class="tabs__btn nedelya1">Неделя №1</a>
-		<a href="index2.html" class="tabs__btn nedelya2">Неделя №2</a>
+
+    <div class="edit_red">
+        <div class="tabs">
+            <div class="tabs__nav">
+                <a href="index.html" class="tabs__btn nedelya1">Неделя №1</a>
+                <a href="index2.html" class="tabs__btn nedelya2">Неделя №2</a>
+            </div>
+        </div>
+        <div class="foto_counter">
+            <div id="total-size">Общий размер: 0 KB</div>
+            <div id="photo-count">Количество фото: 0</div>
+        </div>
+        <button id="delete-all-btn" onclick="promptForPasswordAndDelete()">Уд. 📸</button>
+            <button id="editBtn" type="button" class="redactirovat">Ред.</button>
+                <div id="editDocument">
+        </div>
     </div>
 	
 	<!-- Первая Неделя -->
 	<div class="tab_content">
 		<div class="tabs__pane tabs__pane_show">
 
+            <div class="fullscreen" id="fullscreen-container">
+                <img id="fullscreen-image">
+                <span class="delete-icon" onclick="closeFullscreen()">❌</span>
+            </div>
+
 <!-- For Понедельник -->
 <div class="ramka">
     <ul id="myUL">
-        <span class="caret spisok-pn design">Понедельник</span>
+        <span class="caret spisok-pn design">Пн</span>
         <span class="vremya" id="pntime" oninput="updateTime('pntime', 'vttime')"></span>
         <ul class="nested">
             <ul class="expandable">
@@ -131,38 +139,80 @@
                             <td id="pn8"></td>
                         </tr>
                     </table>
-
-                    <ul id="myUL">
-                        <span class="caret dz">ДЗ</span>
-                        <ul class="nested">
-                            <ul class="expandable">
-                                <li>
-                                    <table class="dztable-pn">
-                                        <tr>
-                                            <th class="time">№</th>
-                                            <th class="predmet">ДЗ</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor1">1</td>
-                                            <td id="dzpn1" oninput="updateCounterPn('dzpn1')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor2">2</td>
-                                            <td id="dzpn2" oninput="updateCounterPn('dzpn2')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor3">3</td>
-                                            <td id="dzpn3" oninput="updateCounterPn('dzpn3')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor4">4</td>
-                                            <td id="dzpn4" oninput="updateCounterPn('dzpn4')"></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </ul>
-                    </ul>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Понедельника -->
+                    <li>
+                        <table class="dztable-pn">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzpn1" oninput="updateCounterPn('dzpn1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzpn2" oninput="updateCounterPn('dzpn2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzpn3" oninput="updateCounterPn('dzpn3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzpn4" oninput="updateCounterPn('dzpn4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Понедельника -->
+                    <li>
+                        <table class="dztable-pn">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-1" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-1" class="custom-photo-input">Фото-Пн-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-1"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-2" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-2" class="custom-photo-input">Фото-Пн-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-2"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-3" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-3" class="custom-photo-input">Фото-Пн-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-3"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-4" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-4" class="custom-photo-input">Фото-Пн-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-4"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
                 </li>
             </ul>
         </ul>
@@ -172,7 +222,7 @@
 <!-- For Вторник -->
 <div class="ramka">
     <ul id="myUL">
-        <span class="caret spisok-vt design">Вторник</span>
+        <span class="caret spisok-vt design">Вт</span>
         <span class="vremya" id="vttime"></span>
         <ul class="nested">
             <ul class="expandable">
@@ -204,38 +254,80 @@
                             <td id="vt8"></td>
                         </tr>
                     </table>
-
-                    <ul id="myUL">
-                        <span class="caret dz">ДЗ</span>
-                        <ul class="nested">
-                            <ul class="expandable">
-                                <li>
-                                    <table class="dztable-vt">
-                                        <tr>
-                                            <th class="time">№</th>
-                                            <th class="predmet">ДЗ</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor1">1</td>
-                                            <td id="dzvt1" oninput="updateCounterVt('dzvt1')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor2">2</td>
-                                            <td id="dzvt2" oninput="updateCounterVt('dzvt2')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor3">3</td>
-                                            <td id="dzvt3" oninput="updateCounterVt('dzvt3')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor4">4</td>
-                                            <td id="dzvt4" oninput="updateCounterVt('dzvt4')"></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </ul>
-                    </ul>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Вторника -->
+                    <li>
+                        <table class="dztable-vt">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzvt1" oninput="updateCounterVt('dzvt1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzvt2" oninput="updateCounterVt('dzvt2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzvt3" oninput="updateCounterVt('dzvt3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzvt4" oninput="updateCounterVt('dzvt4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Вторника -->
+                    <li>
+                        <table class="dztable-vt">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-5" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-5" class="custom-photo-input">Фото-Вт-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-5"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-6" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-6" class="custom-photo-input">Фото-Вт-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-6"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-7" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-7" class="custom-photo-input">Фото-Вт-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-7"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-8" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-8" class="custom-photo-input">Фото-Вт-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-8"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
                 </li>
             </ul>
         </ul>
@@ -243,11 +335,10 @@
 </div>
 
 
-
 <!-- For Среда -->
 <div class="ramka">
     <ul id="myUL">
-        <span class="caret spisok-sr design">Среда</span>
+        <span class="caret spisok-sr design">Ср</span>
         <span class="vremya" id="srtime"></span>
         <ul class="nested">
             <ul class="expandable">
@@ -279,49 +370,90 @@
                             <td id="sr8"></td>
                         </tr>
                     </table>
-
-                    <ul id="myUL">
-                        <span class="caret dz">ДЗ</span>
-                        <ul class="nested">
-                            <ul class="expandable">
-                                <li>
-                                    <table class="dztable-sr">
-                                        <tr>
-                                            <th class="time">№</th>
-                                            <th class="predmet">ДЗ</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor1">1</td>
-                                            <td id="dzsr1" oninput="updateCounterSr('dzsr1')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor2">2</td>
-                                            <td id="dzsr2" oninput="updateCounterSr('dzsr2')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor3">3</td>
-                                            <td id="dzsr3" oninput="updateCounterSr('dzsr3')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor4">4</td>
-                                            <td id="dzsr4" oninput="updateCounterSr('dzsr4')"></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </ul>
-                    </ul>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Среды -->
+                    <li>
+                        <table class="dztable-sr">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzsr1" oninput="updateCounterSr('dzsr1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzsr2" oninput="updateCounterSr('dzsr2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzsr3" oninput="updateCounterSr('dzsr3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzsr4" oninput="updateCounterSr('dzsr4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Среды -->
+                    <li>
+                        <table class="dztable-sr">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-9" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-9" class="custom-photo-input">Фото-Ср-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-9"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-10" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-10" class="custom-photo-input">Фото-Ср-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-10"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-11" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-11" class="custom-photo-input">Фото-Ср-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-11"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-12" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-12" class="custom-photo-input">Фото-Ср-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-12"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
                 </li>
             </ul>
         </ul>
     </ul>
 </div>
 
-
 <!-- For Четверг -->
 <div class="ramka">
     <ul id="myUL">
-        <span class="caret spisok-cht design">Четверг</span>
+        <span class="caret spisok-cht design">Чт</span>
         <span class="vremya" id="chttime"></span>
         <ul class="nested">
             <ul class="expandable">
@@ -353,48 +485,91 @@
                             <td id="cht8"></td>
                         </tr>
                     </table>
-
-                    <ul id="myUL">
-                        <span class="caret dz">ДЗ</span>
-                        <ul class="nested">
-                            <ul class="expandable">
-                                <li>
-                                    <table class="dztable-cht">
-                                        <tr>
-                                            <th class="time">№</th>
-                                            <th class="predmet">ДЗ</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor1">1</td>
-                                            <td id="dzcht1" oninput="updateCounterCht('dzcht1')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor2">2</td>
-                                            <td id="dzcht2" oninput="updateCounterCht('dzcht2')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor3">3</td>
-                                            <td id="dzcht3" oninput="updateCounterCht('dzcht3')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor4">4</td>
-                                            <td id="dzcht4" oninput="updateCounterCht('dzcht4')"></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </ul>
-                    </ul>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Четверга -->
+                    <li>
+                        <table class="dztable-cht">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzcht1" oninput="updateCounterCht('dzcht1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzcht2" oninput="updateCounterCht('dzcht2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzcht3" oninput="updateCounterCht('dzcht3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzcht4" oninput="updateCounterCht('dzcht4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Четверга -->
+                    <li>
+                        <table class="dztable-cht">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class "file-input-container">
+                                        <input type="file" id="photo-input-13" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-13" class="custom-photo-input">Фото-Чт-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-13"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-14" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-14" class="custom-photo-input">Фото-Чт-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-14"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-15" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-15" class="custom-photo-input">Фото-Чт-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-15"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-16" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-16" class="custom-photo-input">Фото-Чт-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-16"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
                 </li>
             </ul>
         </ul>
     </ul>
 </div>
 
+
 <!-- For Пятница -->
 <div class="ramka">
     <ul id="myUL">
-        <span class="caret spisok-pt design">Пятница</span>
+        <span class="caret spisok-pt design">Пт</span>
         <span class="vremya" id="pttime"></span>
         <ul class="nested">
             <ul class="expandable">
@@ -426,124 +601,200 @@
                             <td id="pt8"></td>
                         </tr>
                     </table>
-
-                    <ul id="myUL">
-                        <span class="caret dz">ДЗ</span>
-                        <ul class="nested">
-                            <ul class="expandable">
-                                <li>
-                                    <table class="dztable-pt">
-                                        <tr>
-                                            <th class="time">№</th>
-                                            <th class="predmet">ДЗ</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor1">1</td>
-                                            <td id="dzpt1" oninput="updateCounterPt('dzpt1')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor2">2</td>
-                                            <td id="dzpt2" oninput="updateCounterPt('dzpt2')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor3">3</td>
-                                            <td id="dzpt3" oninput="updateCounterPt('dzpt3')"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="nedelyacolor4">4</td>
-                                            <td id="dzpt4" oninput="updateCounterPt('dzpt4')"></td>
-                                        </tr>
-                                    </table>
-                                </li>
-                            </ul>
-                        </ul>
-                    </ul>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Пятницы -->
+                    <li>
+                        <table class="dztable-pt">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzpt1" oninput="updateCounterPt('dzpt1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzpt2" oninput="updateCounterPt('dzpt2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzpt3" oninput="updateCounterPt('dzpt3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzpt4" oninput="updateCounterPt('dzpt4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Пятницы -->
+                    <li>
+                        <table class="dztable-pt">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class "file-input-container">
+                                        <input type="file" id="photo-input-17" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-17" class="custom-photo-input">Фото-Пт-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-17"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-18" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-18" class="custom-photo-input">Фото-Пт-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-18"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-19" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-19" class="custom-photo-input">Фото-Пт-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-19"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-20" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-20" class="custom-photo-input">Фото-Пт-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-20"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
                 </li>
             </ul>
         </ul>
     </ul>
 </div>
 
-<div class="ramka_sb">
-	<ul id="myUL">
-	  <span class="caret spisok design">Суббота</span>
-	  <span class="vremya" id="sbtime"></span>
-		<ul class="nested">
-			  <ul class="expandable">
-					<li>	
-	<table>
-	<tr>
-	  <th class="time">Время</th>
-	  <th class="predmet">Предмет</th>
-	  <th class="kabinet">Кабинет</th>
-	  </tr>
-	 <tr>
-	  <td class="nedelyacolor1">9:00-10:30</td> 
-	  <td id="sb1"></td> 
-	  <td id="sb2"></td> 
-	 </tr>
-	<tr>
-	  <td class="nedelyacolor2">10:40-12:10</td>
-	  <td id="sb3"></td> 
-	  <td id="sb4"></td> 
-	</tr>
-	 <tr>
-	  <td class="nedelyacolor3">13:00-14:30</td> 
-	  <td id="sb5"></td> 
-	  <td id="sb6"></td> 
-	 </tr>
-	<tr>
-	  <td class="nedelyacolor4">14:40-16:10</td> 
-	  <td id="sb7"></td>
-	  <td id="sb8"></td>
-	</tr>
-	</table>
-	
-	<ul id="myUL">
-	  <span class="caret dz">ДЗ</span>
-		<ul class="nested">
-			  <ul class="expandable">
-					<li>	
-	<table class="dztable">
-	<tr>
-	  <th class="time">№</th>
-	  <th class="predmet">ДЗ</th>
-	</tr>
-	 <tr>
-	  <td class="nedelyacolor1">1</td>
-	  <td id="dzsb1"></td>
-	 </tr>
-	<tr>
-	  <td class="nedelyacolor2">2</td>
-	  <td id="dzsb2"></td>
-	</tr>
-	 <tr>
-	  <td class="nedelyacolor3">3</td>
-	  <td id="dzsb3"></td>
-	 </tr>
-	<tr>
-	  <td class="nedelyacolor4">4</td>
-	  <td id="dzsb4"></td>
-	</tr>
-	</table>
-
-			</li>
-		  </ul>
-		</ul>
-	  </ul>
-	  
-
-			</li>
-		  </ul>
-		</ul>
-	  </ul>
+<!-- For Суббота -->
+<div class="ramka">
+    <ul id="myUL">
+        <span class="caret spisok-sb design">Сб</span>
+        <span class="vremya" id="sbtime"></span>
+        <ul class="nested">
+            <ul class="expandable">
+                <li>
+                    <table>
+                        <tr>
+                            <th class="time">Время</th>
+                            <th class="predmet">Предмет</th>
+                            <th class="kabinet">Кабинет</th>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor1">9:00-10:30</td>
+                            <td id="sb1"></td>
+                            <td id="sb2"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor2">10:40-12:10</td>
+                            <td id="sb3"></td>
+                            <td id="sb4"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor3">13:00-14:30</td>
+                            <td id="sb5"></td>
+                            <td id="sb6"></td>
+                        </tr>
+                        <tr>
+                            <td class="nedelyacolor4">14:40-16:10</td>
+                            <td id="sb7"></td>
+                            <td id="sb8"></td>
+                        </tr>
+                    </table>
+                    <!-- Добавление ДЗ в ячейке ДЗ для Субботы -->
+                    <li>
+                        <table class="dztable-sb">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">ДЗ</th>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor1">1</td>
+                                <td id="dzsb1" oninput="updateCounterSb('dzsb1')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor2">2</td>
+                                <td id="dzsb2" oninput="updateCounterSb('dzsb2')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td id="dzsb3" oninput="updateCounterSb('dzsb3')"></td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td id="dzsb4" oninput="updateCounterSb('dzsb4')"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <!-- Добавлено для фото в ячейке ДЗ для Субботы -->
+                    <li>
+                        <table class="dztable-sb">
+                            <tr>
+                                <th class="time">№</th>
+                                <th class="predmet">Фото</th>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor1">1</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-21" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-21" class="custom-photo-input">Фото-Сб-1</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-21"></div>
+                                </td>
+                            </tr>
+                            <tr>         
+                                <td class="nedelyacolor2">2</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-22" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-22" class="custom-photo-input">Фото-Сб-2</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-22"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor3">3</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-23" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-23" class="custom-photo-input">Фото-Сб-3</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-23"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="nedelyacolor4">4</td>
+                                <td>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-24" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-24" class="custom-photo-input">Фото-Сб-4</label>
+                                    </div>
+                                    <div class="gallery-container" id="gallery-24"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </li>
+            </ul>
+        </ul>
+    </ul>
 </div>
-			
-		</div>
-      </div>
-	  
-  </div>
-
 
 		<script src="js/spisok.js"></script>
 		<script src="js/editor.js"></script>
@@ -554,6 +805,7 @@
 		<script  src="js/vkladki.js"></script>
 		<script  src="js/counter_dz.js"></script>
 		<script  src="js/auto-data.js"></script>
+		<script  src="js/photo_dz.js"></script>
 		
 </body>
 </html>
