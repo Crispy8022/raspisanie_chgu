@@ -1,8 +1,6 @@
-        let currentFullscreenImage = null;
+let currentFullscreenImage = null;
 
-        document.querySelectorAll('.photo-input').forEach(function(input) {
-            input.addEventListener('change', handleFileSelect);
-        });
+        document.querySelectorAll('.photo-input').forEach(input => input.addEventListener('change', handleFileSelect));
 
         // При загрузке страницы восстанавливаем изображения из localStorage.
         const savedImages = JSON.parse(localStorage.getItem('savedImages')) || [];
@@ -19,7 +17,7 @@
 
         function handleFileSelect(event) {
             const files = event.target.files;
-            const containerId = event.target.id === 'photo-input-1' ? 'gallery-1' : (event.target.id === 'photo-input-2' ? 'gallery-2' : (event.target.id === 'photo-input-3' ? 'gallery-3' : (event.target.id === 'photo-input-4' ? 'gallery-4' : (event.target.id === 'photo-input-5' ? 'gallery-5' : (event.target.id === 'photo-input-6' ? 'gallery-6' : (event.target.id === 'photo-input-7' ? 'gallery-7' : (event.target.id === 'photo-input-8' ? 'gallery-8' : (event.target.id === 'photo-input-9' ? 'gallery-9' : (event.target.id === 'photo-input-10' ? 'gallery-10' : (event.target.id === 'photo-input-11' ? 'gallery-11' : (event.target.id === 'photo-input-12' ? 'gallery-12' : (event.target.id === 'photo-input-13' ? 'gallery-13' : (event.target.id === 'photo-input-14' ? 'gallery-14' : (event.target.id === 'photo-input-15' ? 'gallery-15' : (event.target.id === 'photo-input-16' ? 'gallery-16' : (event.target.id === 'photo-input-17' ? 'gallery-17' : (event.target.id === 'photo-input-18' ? 'gallery-18' : (event.target.id === 'photo-input-19' ? 'gallery-19' : (event.target.id === 'photo-input-20' ? 'gallery-20' : (event.target.id === 'photo-input-21' ? 'gallery-21' : (event.target.id === 'photo-input-22' ? 'gallery-22' : (event.target.id === 'photo-input-23' ? 'gallery-23' : 'gallery-24'))))))))))))))))))))));
+            const containerId = event.target.id.replace('photo-input', 'gallery');
 
             for (let i = 0; i < files.length; i++) {
                 const file = files[i];
@@ -31,7 +29,7 @@
                     const tempImg = new Image();
                     tempImg.src = imageUrl;
 
-                    tempImg.onload = function() {
+                    tempImg.onload = function () {
                         const maxWidth = 700;
                         const maxHeight = 700;
 
@@ -61,7 +59,11 @@
                         displayImage(compressedImageUrl, imageSize, containerId);
                         updateTotalSize();
                         updatePhotoCount();
-                        saveImage({ url: compressedImageUrl, size: imageSize, gallery: containerId });
+                        saveImage({
+                            url: compressedImageUrl,
+                            size: imageSize,
+                            gallery: containerId
+                        });
                     };
                 };
 

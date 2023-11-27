@@ -85,24 +85,26 @@
             <a href="index2.html" class="tabs__btn nedelya2">Неделя №2</a>
         </div>
     </div>
+
     <div class="foto_counter">
-        <div id="total-size">Общий размер: 0 KB</div>
-        <div id="photo-count">Количество фото: 0</div>
+        <div id="total-size-2">Общий размер: 0 KB</div>
+        <div id="photo-count-2">Количество фото: 0</div>
+        </div>
+    <button id="delete-all-btn-2" onclick="promptForPasswordAndDelete()">Уд. 📸</button>
+
+    <div class="fullscreen" id="fullscreen-container">
+        <img id="fullscreen-image">
+        <span class="delete-icon" onclick="closeFullscreen()">❌</span>
     </div>
-    <button id="delete-all-btn" onclick="promptForPasswordAndDelete()">Уд. 📸</button>
+
         <button id="editBtn" type="button" class="redactirovat">Ред.</button>
-            <div id="editDocument">
+        <div id="editDocument">
     </div>
 </div>
 
 <!-- Второя Неделя -->
 <div class="tab_content">
-    <div class="tabs__pane tabs__pane_show">
-
-        <div class="fullscreen" id="fullscreen-container">
-            <img id="fullscreen-image">
-            <span class="delete-icon" onclick="closeFullscreen()">❌</span>
-        </div>
+<div class="tabs__pane tabs__pane_show">
 			
 <!-- For Понедельник -->
 <div class="ramka">
@@ -175,40 +177,40 @@
                                 <td class="nedelyacolor1">1</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-1" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-1" class="custom-photo-input">Фото-Пн-1</label>
+                                        <input type="file" id="photo-input-i2-1" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-1" class="custom-photo-input">Фото-Пн-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-1"></div>
+                                    <div class="gallery" id="gallery-i2-1"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-2" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-2" class="custom-photo-input">Фото-Пн-2</label>
+                                        <input type="file" id="photo-input-i2-2" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-2" class="custom-photo-input">Фото-Пн-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-2"></div>
+                                    <div class="gallery" id="gallery-i2-2"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-3" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-3" class="custom-photo-input">Фото-Пн-3</label>
+                                        <input type="file" id="photo-input-i2-3" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-3" class="custom-photo-input">Фото-Пн-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-3"></div>
+                                    <div class="gallery" id="gallery-i2-3"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-4" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-4" class="custom-photo-input">Фото-Пн-4</label>
+                                        <input type="file" id="photo-input-i2-4" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-4" class="custom-photo-input">Фото-Пн-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-4"></div>
+                                    <div class="gallery" id="gallery-i2-4"></div>
                                 </td>
                             </tr>
                         </table>
@@ -290,40 +292,40 @@
                                 <td class="nedelyacolor1">1</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-5" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-5" class="custom-photo-input">Фото-Вт-1</label>
+                                        <input type="file" id="photo-input-i2-5" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-5" class="custom-photo-input">Фото-Вт-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-5"></div>
+                                    <div class="gallery" id="gallery-i2-5"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-6" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-6" class="custom-photo-input">Фото-Вт-2</label>
+                                        <input type="file" id="photo-input-i2-6" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-6" class="custom-photo-input">Фото-Вт-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-6"></div>
+                                    <div class="gallery" id="gallery-i2-6"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-7" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-7" class="custom-photo-input">Фото-Вт-3</label>
+                                        <input type="file" id="photo-input-i2-7" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-7" class="custom-photo-input">Фото-Вт-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-7"></div>
+                                    <div class="gallery" id="gallery-i2-7"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-8" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-8" class="custom-photo-input">Фото-Вт-4</label>
+                                        <input type="file" id="photo-input-i2-8" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-8" class="custom-photo-input">Фото-Вт-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-8"></div>
+                                    <div class="gallery" id="gallery-i2-8"></div>
                                 </td>
                             </tr>
                         </table>
@@ -406,40 +408,40 @@
                                 <td class="nedelyacolor1">1</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-9" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-9" class="custom-photo-input">Фото-Ср-1</label>
+                                        <input type="file" id="photo-input-i2-9" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-9" class="custom-photo-input">Фото-Ср-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-9"></div>
+                                    <div class="gallery" id="gallery-i2-9"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-10" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-10" class="custom-photo-input">Фото-Ср-2</label>
+                                        <input type="file" id="photo-input-i2-10" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-10" class="custom-photo-input">Фото-Ср-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-10"></div>
+                                    <div class="gallery" id="gallery-i2-10"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-11" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-11" class="custom-photo-input">Фото-Ср-3</label>
+                                        <input type="file" id="photo-input-i2-11" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-11" class="custom-photo-input">Фото-Ср-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-11"></div>
+                                    <div class="gallery" id="gallery-i2-11"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-12" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-12" class="custom-photo-input">Фото-Ср-4</label>
+                                        <input type="file" id="photo-input-i2-12" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-12" class="custom-photo-input">Фото-Ср-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-12"></div>
+                                    <div class="gallery" id="gallery-i2-12"></div>
                                 </td>
                             </tr>
                         </table>
@@ -520,41 +522,41 @@
                             <tr>         
                                 <td class="nedelyacolor1">1</td>
                                 <td>
-                                    <div class "file-input-container">
-                                        <input type="file" id="photo-input-13" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-13" class="custom-photo-input">Фото-Чт-1</label>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-i2-13" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-13" class="custom-photo-input">Фото-Чт-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-13"></div>
+                                    <div class="gallery" id="gallery-i2-13"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-14" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-14" class="custom-photo-input">Фото-Чт-2</label>
+                                        <input type="file" id="photo-input-i2-14" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-14" class="custom-photo-input">Фото-Чт-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-14"></div>
+                                    <div class="gallery" id="gallery-i2-14"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-15" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-15" class="custom-photo-input">Фото-Чт-3</label>
+                                        <input type="file" id="photo-input-i2-15" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-15" class="custom-photo-input">Фото-Чт-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-15"></div>
+                                    <div class="gallery" id="gallery-i2-15"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-16" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-16" class="custom-photo-input">Фото-Чт-4</label>
+                                        <input type="file" id="photo-input-i2-16" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-16" class="custom-photo-input">Фото-Чт-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-16"></div>
+                                    <div class="gallery" id="gallery-i2-16"></div>
                                 </td>
                             </tr>
                         </table>
@@ -636,41 +638,41 @@
                             <tr>         
                                 <td class="nedelyacolor1">1</td>
                                 <td>
-                                    <div class "file-input-container">
-                                        <input type="file" id="photo-input-17" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-17" class="custom-photo-input">Фото-Пт-1</label>
+                                    <div class="file-input-container">
+                                        <input type="file" id="photo-input-i2-17" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-17" class="custom-photo-input">Фото-Пт-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-17"></div>
+                                    <div class="gallery" id="gallery-i2-17"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-18" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-18" class="custom-photo-input">Фото-Пт-2</label>
+                                        <input type="file" id="photo-input-i2-18" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-18" class="custom-photo-input">Фото-Пт-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-18"></div>
+                                    <div class="gallery" id="gallery-i2-18"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-19" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-19" class="custom-photo-input">Фото-Пт-3</label>
+                                        <input type="file" id="photo-input-i2-19" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-19" class="custom-photo-input">Фото-Пт-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-19"></div>
+                                    <div class="gallery" id="gallery-i2-19"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-20" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-20" class="custom-photo-input">Фото-Пт-4</label>
+                                        <input type="file" id="photo-input-i2-20" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-20" class="custom-photo-input">Фото-Пт-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-20"></div>
+                                    <div class="gallery" id="gallery-i2-20"></div>
                                 </td>
                             </tr>
                         </table>
@@ -752,40 +754,40 @@
                                 <td class="nedelyacolor1">1</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-21" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-21" class="custom-photo-input">Фото-Сб-1</label>
+                                        <input type="file" id="photo-input-i2-21" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-21" class="custom-photo-input">Фото-Сб-1</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-21"></div>
+                                    <div class="gallery" id="gallery-i2-21"></div>
                                 </td>
                             </tr>
                             <tr>         
                                 <td class="nedelyacolor2">2</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-22" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-22" class="custom-photo-input">Фото-Сб-2</label>
+                                        <input type="file" id="photo-input-i2-22" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-22" class="custom-photo-input">Фото-Сб-2</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-22"></div>
+                                    <div class="gallery" id="gallery-i2-22"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor3">3</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-23" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-23" class="custom-photo-input">Фото-Сб-3</label>
+                                        <input type="file" id="photo-input-i2-23" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-23" class="custom-photo-input">Фото-Сб-3</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-23"></div>
+                                    <div class="gallery" id="gallery-i2-23"></div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="nedelyacolor4">4</td>
                                 <td>
                                     <div class="file-input-container">
-                                        <input type="file" id="photo-input-24" accept="image/*" multiple class="photo-input">
-                                        <label for="photo-input-24" class="custom-photo-input">Фото-Сб-4</label>
+                                        <input type="file" id="photo-input-i2-24" accept="image/*" multiple class="photo-input">
+                                        <label for="photo-input-i2-24" class="custom-photo-input">Фото-Сб-4</label>
                                     </div>
-                                    <div class="gallery-container" id="gallery-24"></div>
+                                    <div class="gallery" id="gallery-i2-24"></div>
                                 </td>
                             </tr>
                         </table>
