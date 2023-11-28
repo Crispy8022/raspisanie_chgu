@@ -47,6 +47,7 @@
       margin-top: 5.3em;
       width: 70.4%;
       transform: translateX(21%);
+      background-color: rgba(0,30,0,1);
     }
 
     @media screen and (min-device-width: 300px) and (max-device-width: 500px) { 

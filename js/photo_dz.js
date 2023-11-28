@@ -129,11 +129,12 @@ let currentFullscreenImage = null;
 
         function promptForPasswordAndDelete() {
             const password = prompt('Введите пароль для удаления всех изображений:', '');
-
+        
             if (password === '596') {
                 deleteAllImages();
+                alert('Все изображения удалены успешно.');
             } else {
-                alert('Неверный пароль. Действие отменено.');
+                alert('Неправильный пароль. Изображения не удалены.');
             }
         }
 

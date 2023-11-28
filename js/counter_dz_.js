@@ -1,131 +1,47 @@
-    // Counter and update function for Понедельник
-    let counterPn_ = localStorage.getItem('counterPn_') || 0;
+// Функция для обновления счетчика
+function updateCounter(dayInfo) {
+    let count = localStorage.getItem(dayInfo.counter) || 0;
 
-    function updateCounterPn_(cellId) {
-        const table = document.querySelector(".dztable-pn_");
+    function update() {
+        const table = document.querySelector(`.dztable-${dayInfo.shortName}`);
         const rows = table.getElementsByTagName('tr');
 
-        counterPn_ = 0;
+        count = Array.from(rows).slice(1).reduce((acc, row) => {
+            const cell = row.getElementsByTagName('td')[1];
+            return acc + (cell.innerHTML.trim() !== "" ? 1 : 0);
+        }, 0);
 
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterPn_++;
-            }
-        }
-
-        document.querySelector(".spisok-pn_").innerHTML = `Пн (${counterPn_})`;
-        localStorage.setItem('counterPn_', counterPn_);
+        document.querySelector(`.spisok-${dayInfo.shortName}`).innerHTML = `${dayInfo.name} (${count})`;
+        localStorage.setItem(dayInfo.counter, count);
     }
 
-    document.querySelector(".spisok-pn_").innerHTML = `Пн (${counterPn_})`;
+    update();
 
-    // Counter and update function for Вторник
-    let counterVt_ = localStorage.getItem('counterVt_') || 0;
+    return update;
+}
 
-    function updateCounterVt_(cellId) {
-        const table = document.querySelector(".dztable-vt_");
-        const rows = table.getElementsByTagName('tr');
+// Создаем объекты с информацией о каждом дне
+const daysInfo = [
+    { name: "Пн", shortName: "pn_", counter: "counterPn_" },
+    { name: "Вт", shortName: "vt_", counter: "counterVt_" },
+    { name: "Ср", shortName: "sr_", counter: "counterSr_" },
+    { name: "Чт", shortName: "cht_", counter: "counterCht_" },
+    { name: "Пт", shortName: "pt_", counter: "counterPt_" },
+    { name: "Сб", shortName: "sb_", counter: "counterSb_" }
+];
 
-        counterVt_ = 0;
+// Создаем функции обновления для каждого дня
+const updateFunctions = daysInfo.map(dayInfo => updateCounter(dayInfo));
 
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterVt_++;
-            }
-        }
+// Вызываем функции обновления при загрузке страницы
+document.addEventListener("DOMContentLoaded", function () {
+    updateFunctions.forEach(updateFunction => updateFunction());
+});
 
-        document.querySelector(".spisok-vt_").innerHTML = `Вт (${counterVt_})`;
-        localStorage.setItem('counterVt_', counterVt_);
-    }
+// Удаление всех значений и обновление счетчиков
+document.getElementById("deleteDZ").addEventListener("click", function () {
+    // Ваш код для удаления значений
 
-    document.querySelector(".spisok-vt_").innerHTML = `Вт (${counterVt_})`;
-
-    // Counter and update function for Среда
-    let counterSr_ = localStorage.getItem('counterSr_') || 0;
-
-    function updateCounterSr_(cellId) {
-        const table = document.querySelector(".dztable-sr_");
-        const rows = table.getElementsByTagName('tr');
-
-        counterSr_ = 0;
-
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterSr_++;
-            }
-        }
-
-        document.querySelector(".spisok-sr_").innerHTML = `Ср (${counterSr_})`;
-        localStorage.setItem('counterSr_', counterSr_);
-    }
-
-    document.querySelector(".spisok-sr_").innerHTML = `Ср (${counterSr_})`;
-
-    // Counter and update function for Четверг
-    let counterCht_ = localStorage.getItem('counterCht_') || 0;
-
-    function updateCounterCht_(cellId) {
-        const table = document.querySelector(".dztable-cht_");
-        const rows = table.getElementsByTagName('tr');
-
-        counterCht_ = 0;
-
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterCht_++;
-            }
-        }
-
-        document.querySelector(".spisok-cht_").innerHTML = `Чт (${counterCht_})`;
-        localStorage.setItem('counterCht_', counterCht_);
-    }
-
-    document.querySelector(".spisok-cht_").innerHTML = `Чт (${counterCht_})`;
-
-    // Counter and update function for Пятница
-    let counterPt_ = localStorage.getItem('counterPt_') || 0;
-
-    function updateCounterPt_(cellId) {
-        const table = document.querySelector(".dztable-pt_");
-        const rows = table.getElementsByTagName('tr');
-
-        counterPt_ = 0;
-
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterPt_++;
-            }
-        }
-
-        document.querySelector(".spisok-pt_").innerHTML = `Пт (${counterPt_})`;
-        localStorage.setItem('counterPt_', counterPt_);
-    }
-
-    document.querySelector(".spisok-pt_").innerHTML = `Пт (${counterPt_})`;
-
-    // Counter and update function for Суббота
-    let counterSb_ = localStorage.getItem('counterSb_') || 0;
-
-    function updateCounterSb_(cellId) {
-        const table = document.querySelector(".dztable-sb_");
-        const rows = table.getElementsByTagName('tr');
-
-        counterSb_ = 0;
-
-        for (let i = 1; i < rows.length; i++) {
-            const cell = rows[i].getElementsByTagName('td')[1];
-            if (cell.innerHTML.trim() !== "") {
-                counterSb_++;
-            }
-        }
-
-        document.querySelector(".spisok-sb_").innerHTML = `Сб (${counterSb_})`;
-        localStorage.setItem('counterSb_', counterSb_);
-    }
-
-    document.querySelector(".spisok-sb_").innerHTML = `Сб (${counterSb_})`;
+    // После удаления вызываем соответствующие функции обновления
+    updateFunctions.forEach(updateFunction => updateFunction());
+});

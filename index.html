@@ -22,30 +22,7 @@
 		<!-- <link rel="stylesheet" href="css/week1.css" /> -->
 		<link rel="stylesheet" href="css/nedelya1.css" />
 		<link rel="stylesheet" href="css/menu1.css" />
-
-        <style>
-            /* Predmets */
-            span.znach {
-                border: 1px solid #ccc;
-                padding: 7px;
-                display: inline-block;
-                cursor: pointer;
-                width: 90%;
-            }
-    
-            .hidden {
-                display: none;
-            }
-
-            /* Удалить ДЗ */
-            .deleteDZ {
-                float: right; 
-                margin: -31px 3px 0 0; 
-                background: red; color: 
-                white; 
-                padding: 8px
-            }
-        </style>
+		<link rel="stylesheet" href="css/predmets.css" />
 </head>
 
 <body>
@@ -115,7 +92,7 @@
             <div id="photo-count">Количество фото: 0</div>
         </div>
         <button id="delete-all-btn" onclick="promptForPasswordAndDelete()">Уд. 📸</button>
-        <button id="deleteAll" class="deleteDZ">Уд. ДЗ</button>
+        <button id="deleteDZ" class="deleteDZ">Уд. ДЗ</button>
 
         <div class="fullscreen" id="fullscreen-container">
             <img id="fullscreen-image">
