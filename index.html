@@ -22,6 +22,30 @@
 		<!-- <link rel="stylesheet" href="css/week1.css" /> -->
 		<link rel="stylesheet" href="css/nedelya1.css" />
 		<link rel="stylesheet" href="css/menu1.css" />
+
+        <style>
+            /* Predmets */
+            span.znach {
+                border: 1px solid #ccc;
+                padding: 7px;
+                display: inline-block;
+                cursor: pointer;
+                width: 90%;
+            }
+    
+            .hidden {
+                display: none;
+            }
+
+            /* Удалить ДЗ */
+            .deleteDZ {
+                float: right; 
+                margin: -31px 3px 0 0; 
+                background: red; color: 
+                white; 
+                padding: 8px
+            }
+        </style>
 </head>
 
 <body>
@@ -91,7 +115,8 @@
             <div id="photo-count">Количество фото: 0</div>
         </div>
         <button id="delete-all-btn" onclick="promptForPasswordAndDelete()">Уд. 📸</button>
-        
+        <button id="deleteAll" class="deleteDZ">Уд. ДЗ</button>
+
         <div class="fullscreen" id="fullscreen-container">
             <img id="fullscreen-image">
             <span class="delete-icon" onclick="closeFullscreen()">❌</span>
@@ -122,23 +147,60 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="pn1"></td>
-                            <td id="pn2"></td>
+                            <td>
+                                <div id="input-block-1" class="hidden">
+                                    <input type="text" id="input-value-1" list="values-list-1" onfocus="createDatalist(1)">
+                                    <datalist id="values-list-1"></datalist>
+                                    <button onclick="insertSelectedValue(1)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-1" onclick="showInsertElements(1)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpn1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="pn3"></td>
-                            <td id="pn4"></td>
+                            <td>
+                                <div id="input-block-2" class="hidden">
+                                    <input type="text" id="input-value-2" list="values-list-2" onfocus="createDatalist(2)">
+                                    <datalist id="values-list-2"></datalist>
+                                    <button onclick="insertSelectedValue(2)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-2" onclick="showInsertElements(2)"></span></p>
+                                </div>
+                            </td>
+                            
+                            <td id="kpn2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="pn5"></td>
-                            <td id="pn6"></td>
+                            <td>
+                                <div id="input-block-3" class="hidden">
+                                    <input type="text" id="input-value-3" list="values-list-3" onfocus="createDatalist(3)">
+                                    <datalist id="values-list-3"></datalist>
+                                    <button onclick="insertSelectedValue(3)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-3" onclick="showInsertElements(3)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpn3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="pn7"></td>
-                            <td id="pn8"></td>
+                            <td>
+                                <div id="input-block-4" class="hidden">
+                                    <input type="text" id="input-value-4" list="values-list-4" onfocus="createDatalist(4)">
+                                    <datalist id="values-list-4"></datalist>
+                                    <button onclick="insertSelectedValue(4)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-4" onclick="showInsertElements(4)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpn4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Понедельника -->
@@ -237,23 +299,59 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="vt1"></td>
-                            <td id="vt2"></td>
+                            <td>
+                                <div id="input-block-5" class="hidden">
+                                    <input type="text" id="input-value-5" list="values-list-5" onfocus="createDatalist(5)">
+                                    <datalist id="values-list-5"></datalist>
+                                    <button onclick="insertSelectedValue(5)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-5" onclick="showInsertElements(5)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kvt1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="vt3"></td>
-                            <td id="vt4"></td>
+                            <td>
+                                <div id="input-block-6" class="hidden">
+                                    <input type="text" id="input-value-6" list="values-list-6" onfocus="createDatalist(6)">
+                                    <datalist id="values-list-6"></datalist>
+                                    <button onclick="insertSelectedValue(6)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-6" onclick="showInsertElements(6)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kvt2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="vt5"></td>
-                            <td id="vt6"></td>
+                            <td>
+                                <div id="input-block-7" class="hidden">
+                                    <input type="text" id="input-value-7" list="values-list-7" onfocus="createDatalist(7)">
+                                    <datalist id="values-list-7"></datalist>
+                                    <button onclick="insertSelectedValue(7)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-7" onclick="showInsertElements(7)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kvt3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="vt7"></td>
-                            <td id="vt8"></td>
+                            <td>
+                                <div id="input-block-8" class="hidden">
+                                    <input type="text" id="input-value-8" list="values-list-8" onfocus="createDatalist(8)">
+                                    <datalist id="values-list-8"></datalist>
+                                    <button onclick="insertSelectedValue(8)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-8" onclick="showInsertElements(8)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kvt4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Вторника -->
@@ -353,23 +451,59 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="sr1"></td>
-                            <td id="sr2"></td>
+                            <td>
+                                <div id="input-block-9" class="hidden">
+                                    <input type="text" id="input-value-9" list="values-list-9" onfocus="createDatalist(9)">
+                                    <datalist id="values-list-9"></datalist>
+                                    <button onclick="insertSelectedValue(9)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-9" onclick="showInsertElements(9)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksr1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="sr3"></td>
-                            <td id="sr4"></td>
+                            <td>
+                                <div id="input-block-10" class="hidden">
+                                    <input type="text" id="input-value-10" list="values-list-10" onfocus="createDatalist(10)">
+                                    <datalist id="values-list-10"></datalist>
+                                    <button onclick="insertSelectedValue(10)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-10" onclick="showInsertElements(10)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksr2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="sr5"></td>
-                            <td id="sr6"></td>
+                            <td>
+                                <div id="input-block-11" class="hidden">
+                                    <input type="text" id="input-value-11" list="values-list-11" onfocus="createDatalist(11)">
+                                    <datalist id="values-list-11"></datalist>
+                                    <button onclick="insertSelectedValue(11)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-11" onclick="showInsertElements(11)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksr3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="sr7"></td>
-                            <td id="sr8"></td>
+                            <td>
+                                <div id="input-block-12" class="hidden">
+                                    <input type="text" id="input-value-12" list="values-list-12" onfocus="createDatalist(12)">
+                                    <datalist id="values-list-12"></datalist>
+                                    <button onclick="insertSelectedValue(12)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-12" onclick="showInsertElements(12)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksr4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Среды -->
@@ -468,23 +602,59 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="cht1"></td>
-                            <td id="cht2"></td>
+                            <td>
+                                <div id="input-block-13" class="hidden">
+                                    <input type="text" id="input-value-13" list="values-list-13" onfocus="createDatalist(13)">
+                                    <datalist id="values-list-13"></datalist>
+                                    <button onclick="insertSelectedValue(13)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-13" onclick="showInsertElements(13)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kcht1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="cht3"></td>
-                            <td id="cht4"></td>
+                            <td>
+                                <div id="input-block-14" class="hidden">
+                                    <input type="text" id="input-value-14" list="values-list-14" onfocus="createDatalist(14)">
+                                    <datalist id="values-list-14"></datalist>
+                                    <button onclick="insertSelectedValue(14)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-14" onclick="showInsertElements(14)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kcht2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="cht5"></td>
-                            <td id="cht6"></td>
+                            <td>
+                                <div id="input-block-15" class="hidden">
+                                    <input type="text" id="input-value-15" list="values-list-15" onfocus="createDatalist(15)">
+                                    <datalist id="values-list-15"></datalist>
+                                    <button onclick="insertSelectedValue(15)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-15" onclick="showInsertElements(15)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kcht3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="cht7"></td>
-                            <td id="cht8"></td>
+                            <td>
+                                <div id="input-block-16" class="hidden">
+                                    <input type="text" id="input-value-16" list="values-list-16" onfocus="createDatalist(16)">
+                                    <datalist id="values-list-16"></datalist>
+                                    <button onclick="insertSelectedValue(16)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-16" onclick="showInsertElements(16)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kcht4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Четверга -->
@@ -584,23 +754,59 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="pt1"></td>
-                            <td id="pt2"></td>
+                            <td>
+                                <div id="input-block-17" class="hidden">
+                                    <input type="text" id="input-value-17" list="values-list-17" onfocus="createDatalist(17)">
+                                    <datalist id="values-list-17"></datalist>
+                                    <button onclick="insertSelectedValue(17)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-17" onclick="showInsertElements(17)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpt1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="pt3"></td>
-                            <td id="pt4"></td>
+                            <td>
+                                <div id="input-block-18" class="hidden">
+                                    <input type="text" id="input-value-18" list="values-list-18" onfocus="createDatalist(18)">
+                                    <datalist id="values-list-18"></datalist>
+                                    <button onclick="insertSelectedValue(18)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-18" onclick="showInsertElements(18)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpt2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="pt5"></td>
-                            <td id="pt6"></td>
+                            <td>
+                                <div id="input-block-19" class="hidden">
+                                    <input type="text" id="input-value-19" list="values-list-19" onfocus="createDatalist(19)">
+                                    <datalist id="values-list-19"></datalist>
+                                    <button onclick="insertSelectedValue(19)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-19" onclick="showInsertElements(19)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpt3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="pt7"></td>
-                            <td id="pt8"></td>
+                            <td>
+                                <div id="input-block-20" class="hidden">
+                                    <input type="text" id="input-value-20" list="values-list-20" onfocus="createDatalist(20)">
+                                    <datalist id="values-list-20"></datalist>
+                                    <button onclick="insertSelectedValue(20)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-20" onclick="showInsertElements(20)"></span></p>
+                                </div>
+                            </td>
+                            <td id="kpt4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Пятницы -->
@@ -699,23 +905,59 @@
                         </tr>
                         <tr>
                             <td class="nedelyacolor1">9:00-10:30</td>
-                            <td id="sb1"></td>
-                            <td id="sb2"></td>
+                            <td>
+                                <div id="input-block-21" class="hidden">
+                                    <input type="text" id="input-value-21" list="values-list-21" onfocus="createDatalist(21)">
+                                    <datalist id="values-list-21"></datalist>
+                                    <button onclick="insertSelectedValue(21)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-21" onclick="showInsertElements(21)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksb1"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor2">10:40-12:10</td>
-                            <td id="sb3"></td>
-                            <td id="sb4"></td>
+                            <td id="sb3">
+                                <div id="input-block-22" class="hidden">
+                                    <input type="text" id="input-value-22" list="values-list-22" onfocus="createDatalist(22)">
+                                    <datalist id="values-list-22"></datalist>
+                                    <button onclick="insertSelectedValue(22)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-22" onclick="showInsertElements(22)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksb2"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor3">13:00-14:30</td>
-                            <td id="sb5"></td>
-                            <td id="sb6"></td>
+                            <td>
+                                <div id="input-block-23" class="hidden">
+                                    <input type="text" id="input-value-23" list="values-list-23" onfocus="createDatalist(23)">
+                                    <datalist id="values-list-23"></datalist>
+                                    <button onclick="insertSelectedValue(23)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-23" onclick="showInsertElements(23)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksb3"></td>
                         </tr>
                         <tr>
                             <td class="nedelyacolor4">14:40-16:10</td>
-                            <td id="sb7"></td>
-                            <td id="sb8"></td>
+                            <td>
+                                <div id="input-block-24" class="hidden">
+                                    <input type="text" id="input-value-24" list="values-list-24" onfocus="createDatalist(24)">
+                                    <datalist id="values-list-24"></datalist>
+                                    <button onclick="insertSelectedValue(24)">Вставить</button>
+                                </div>
+                                <div>
+                                    <p> <!-- Текст --> <span class="znach" id="text-field-24" onclick="showInsertElements(24)"></span></p>
+                                </div>
+                            </td>
+                            <td id="ksb4"></td>
                         </tr>
                     </table>
                     <!-- Добавление ДЗ в ячейке ДЗ для Субботы -->
@@ -808,6 +1050,7 @@
 		<script  src="js/counter_dz.js"></script>
 		<script  src="js/auto-data.js"></script>
 		<script  src="js/photo_dz.js"></script>
+		<script  src="js/predmets.js"></script>
 		
 </body>
 </html>
