@@ -118,5 +118,10 @@ body {
 	text-align: center;
 	margin-top: 5px;
 	font-weight: bold;
-	
+}
+
+@media screen and (max-width: 600px) {
+	.foto_counter {
+		margin-right: 70px;
+	}
 }

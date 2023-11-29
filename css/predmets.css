@@ -13,9 +13,16 @@ span.znach {
 
 /* Удалить ДЗ */
 .deleteDZ {
-    float: right; 
-    margin: -31px 3px 0 0; 
-    background: red; color: 
-    white; 
-    padding: 8px
+    background: red; 
+    color: white; 
+    padding: 8px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: -2.2em;
+}
+
+.button_delete {
+    position: relative;
 }

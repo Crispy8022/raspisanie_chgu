@@ -146,6 +146,14 @@ label.select-label {
 	display: none;
 }
 
+.weekMessage {
+	text-align: center;
+    width: 100%;
+    font-size: 12px;
+    margin-top: -25px;
+    position: absolute;
+}
+
 @media screen and (max-width: 30em) {
 
 	body::before,
@@ -169,7 +177,7 @@ label.select-label {
 }
 @media screen and (min-width: 30em) {
 	.codrops-header {
-	height: 130px;
+	height: 170px;
 	width: 70%;
 	}
 }

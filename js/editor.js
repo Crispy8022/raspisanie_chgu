@@ -56,7 +56,7 @@ const editables = document.querySelectorAll("#pntime, #kpn1, #kpn2, #kpn3, #kpn4
           localStorage.removeItem(editables[i].getAttribute("id"));
         }
       }
-      alert("Все ДЗ, кроме тех, которые начинаются на pn, vt, sr, cht, pt, sb или k, удалены успешно.");
+      alert("Все ДЗ удалены успешно.");
     } else {
       alert("Неправильный пароль. ДЗ не удалены.");
     }
